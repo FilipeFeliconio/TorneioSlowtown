@@ -1,0 +1,1721 @@
+_type: export
+__export_format: 4
+__export_date: 2023-06-20T23:13:56.587Z
+__export_source: insomnia.desktop.app:v2023.2.2
+resources:
+  - _id: req_ef2b38c7b4094b929c6b27d93cc9683c
+    parentId: fld_895b7fb0e4a240dc835b0dfcb3802b11
+    modified: 1687265301313
+    created: 1687142282582
+    url: "{{ _.base_url }}/usuario"
+    name: Cadastra usuário no sistema
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "primeiro_nome": "Admin",
+        	"ultimo_nome": "Silva",
+          "email": "admin1@gmail.com",
+          "senha": "123456",
+          "is_admin": true
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_226bf9edf86f4457be1c089d6333fec0
+    authentication:
+      type: bearer
+      token: ""
+    metaSortKey: -1667771155343
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_895b7fb0e4a240dc835b0dfcb3802b11
+    parentId: wrk_e0d5e715fc54436c9601c4e1e8a82b94
+    modified: 1687181245998
+    created: 1687181245998
+    name: usuario
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1687181245998
+    _type: request_group
+  - _id: wrk_e0d5e715fc54436c9601c4e1e8a82b94
+    parentId: null
+    modified: 1687142282303
+    created: 1687142282303
+    name: API TorneioJudo
+    description: API
+    scope: collection
+    _type: workspace
+  - _id: req_8d82612e606f4032ba73a5ca691dfb5a
+    parentId: fld_895b7fb0e4a240dc835b0dfcb3802b11
+    modified: 1687261398480
+    created: 1687261334573
+    url: "{{ _.base_url }}/usuario"
+    name: Atualiza usuário no sistema
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "primeiro_nome": "Admin2",
+        	"ultimo_nome": "Silva2"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_226bf9edf86f4457be1c089d6333fec0
+    authentication:
+      type: bearer
+      token: ""
+    metaSortKey: -1667771155341
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_bb6f953f4efa43c5b4722eb91d379390
+    parentId: fld_895b7fb0e4a240dc835b0dfcb3802b11
+    modified: 1687267110646
+    created: 1687142282617
+    url: "{{ _.base_url }}/usuario/3"
+    name: Busca usuário por id
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1667771155293
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b3def6f332ca44e283716531d7696adb
+    parentId: fld_895b7fb0e4a240dc835b0dfcb3802b11
+    modified: 1687188183158
+    created: 1687142282450
+    url: "{{ _.base_url }}/usuario/1"
+    name: Remove o usuário do ID informado
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155243
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b6dd9a7cd7aa4a8198f99f85378ee5ba
+    parentId: fld_4417263b278c468a97bd76cd7e5cfa00
+    modified: 1687282197695
+    created: 1687263513838
+    url: "{{ _.base_url }}/atleta"
+    name: Cadastra atleta no sistema
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "cpf": "100.200.300-87",
+        	"peso": 70.0,
+        	"categoria": "Leve",
+        	"patrocinador": "Academia xpto",	
+        	"user_id": 4
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_226bf9edf86f4457be1c089d6333fec0
+    authentication:
+      type: bearer
+      token: ""
+    metaSortKey: -1667771155343
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_4417263b278c468a97bd76cd7e5cfa00
+    parentId: wrk_e0d5e715fc54436c9601c4e1e8a82b94
+    modified: 1687263513814
+    created: 1687263513814
+    name: atleta
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1677482732291.5
+    _type: request_group
+  - _id: req_b85056d0c8ba4f3fae1fefb1205ec055
+    parentId: fld_4417263b278c468a97bd76cd7e5cfa00
+    modified: 1687287826115
+    created: 1687263647658
+    url: "{{ _.base_url }}/atleta"
+    name: Cadastra atleta no sistema sem ter usuário cadastrado previamente
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"user": {
+        		"primeiro_nome": "Atleta3",
+        		"ultimo_nome": "Xyz",
+        		"email": "atleta4@gmail.com",
+        		"senha": "123456"
+        	},
+          "cpf": "300.200.300-37",
+        	"peso": 72.0,
+        	"categoria": "Leve",
+        	"patrocinador": "Academia fr"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_226bf9edf86f4457be1c089d6333fec0
+    authentication:
+      type: bearer
+      token: ""
+    metaSortKey: -1667771155342
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_866914c0d4ee4875acce0d3e0c3b9962
+    parentId: fld_4417263b278c468a97bd76cd7e5cfa00
+    modified: 1687265989512
+    created: 1687263513852
+    url: "{{ _.base_url }}/atleta/2"
+    name: Busca atleta por id
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1667771155293
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d488643f8a8c4526a138371635f55d23
+    parentId: fld_4417263b278c468a97bd76cd7e5cfa00
+    modified: 1687263605229
+    created: 1687263576428
+    url: "{{ _.base_url }}/atleta"
+    name: Busca todos atletas
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1667771155268
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_fee1013a27b1455b8e6f0cd1e9072913
+    parentId: fld_4417263b278c468a97bd76cd7e5cfa00
+    modified: 1687273651382
+    created: 1687269308817
+    url: "{{ base_url }}/atleta/categoria/Leve"
+    name: Busca atletas por categoria
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155255.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_f90ebedab8054a4f80dd3bc6575ce156
+    parentId: fld_4417263b278c468a97bd76cd7e5cfa00
+    modified: 1687263611290
+    created: 1687263513821
+    url: "{{ _.base_url }}/atleta/1"
+    name: Remove atleta do ID informado
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155243
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_534cca4f24f3442d927d172bdfd6fb96
+    parentId: fld_8270683551b949db8d9093bfbd9a7ef1
+    modified: 1687188028946
+    created: 1687142282989
+    url: "{{ _.base_url }}/login"
+    name: login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "admin1@gmail.com",
+          "senha": "123456"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_0b68f6025a4244deaf1959ef907979a4
+    authentication: {}
+    metaSortKey: -1667784221224
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_8270683551b949db8d9093bfbd9a7ef1
+    parentId: wrk_e0d5e715fc54436c9601c4e1e8a82b94
+    modified: 1687142282970
+    created: 1687142282970
+    name: auth
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1667784218585
+    _type: request_group
+  - _id: req_b5771be04c4e494dbccb29cbb285b196
+    parentId: fld_8270683551b949db8d9093bfbd9a7ef1
+    modified: 1687267255209
+    created: 1687267167453
+    url: "{{ _.base_url }}/login"
+    name: login atleta
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "atleta1@gmail.com",
+        	"senha": "123456"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_0b68f6025a4244deaf1959ef907979a4
+    authentication: {}
+    metaSortKey: -1667782587993.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_733053e9c7554941a28e0ebffd1a4721
+    parentId: fld_281d8c5334154f278c9c4527706116a8
+    modified: 1687269313770
+    created: 1687142282928
+    url: "{{ base_url }}/luta"
+    name: Busca todas as lutas
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155380
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_281d8c5334154f278c9c4527706116a8
+    parentId: wrk_e0d5e715fc54436c9601c4e1e8a82b94
+    modified: 1687196345787
+    created: 1687142282856
+    name: luta
+    description: All trees related endpoints
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1667771155391
+    _type: request_group
+  - _id: req_814daf28b766466fb50d58da0c8affdb
+    parentId: fld_281d8c5334154f278c9c4527706116a8
+    modified: 1687287894203
+    created: 1687142282907
+    url: "{{ base_url }}/luta"
+    name: Cadastra luta
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"data": "2023-07-01",
+        	"id_atleta_a": 1,
+        	"id_atleta_b": 2,
+        	"juiz_id": 1,
+        	"etapa_id": 1
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_0cbdc8a20cb842b7991275961d0c5b78
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155379.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_7e1c588bc5b24be69cc55c303bb483cc
+    parentId: fld_281d8c5334154f278c9c4527706116a8
+    modified: 1687284652095
+    created: 1687273834570
+    url: "{{ base_url }}/luta/etapa/Quartas"
+    name: Busca todas as lutas por etapa
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155378.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_18e64c44cef0466b9fb1d5109be8a983
+    parentId: fld_281d8c5334154f278c9c4527706116a8
+    modified: 1687287948209
+    created: 1687142282890
+    url: "{{ base_url }}/luta/1"
+    name: Busca luta pelo id informado
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b8aa04b4b5d94b81a919a13fbc43bbed
+    parentId: fld_281d8c5334154f278c9c4527706116a8
+    modified: 1687287943065
+    created: 1687142282877
+    url: "{{ base_url }}/luta/1"
+    name: Atualiza data luta e/ou vencedor
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "data": "2023-07-24",
+        	"id_atleta_vencedor": 2
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_def77868729540d7a0b7f77a1d75a15d
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155372
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_16f278169c4449b9ade1b858be387a31
+    parentId: fld_281d8c5334154f278c9c4527706116a8
+    modified: 1687285981399
+    created: 1687142282863
+    url: "{{ base_url }}/luta/33"
+    name: Deleta luta por id
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155369
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_1ed07974f4294a35a7ca93db79870a78
+    parentId: fld_1ad7f1452cad427181528e944ed45e1f
+    modified: 1687263028684
+    created: 1687142282714
+    url: "{{ base_url }}/juiz/1"
+    name: Busca juiz por id
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155353
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_1ad7f1452cad427181528e944ed45e1f
+    parentId: wrk_e0d5e715fc54436c9601c4e1e8a82b94
+    modified: 1687196371700
+    created: 1687142282658
+    name: juiz
+    description: All endpoints related to plantation locations
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1667771155386
+    _type: request_group
+  - _id: req_08e699d1a48549fcbecbeebdb2744cef
+    parentId: fld_1ad7f1452cad427181528e944ed45e1f
+    modified: 1687263006919
+    created: 1687263006919
+    url: "{{ base_url }}/juiz"
+    name: Busca todos os juizes
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155351.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_0641e79a485445b6a109360b1063e6d5
+    parentId: fld_1ad7f1452cad427181528e944ed45e1f
+    modified: 1687263068538
+    created: 1687263050288
+    url: "{{ base_url }}/juiz"
+    name: Cadastra juiz
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Raimundo Souza"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155349
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_f13a58dd78324ada805b1cf8a25718fc
+    parentId: fld_1ad7f1452cad427181528e944ed45e1f
+    modified: 1687268192401
+    created: 1687263225457
+    url: "{{ base_url }}/juiz/2"
+    name: Atualiza juiz
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Raimundo Souza2"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155348.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_bacc3245e27948549c8476fa73edfc9f
+    parentId: fld_1ad7f1452cad427181528e944ed45e1f
+    modified: 1687263091630
+    created: 1687142282673
+    url: "{{ base_url }}/juiz/2"
+    name: Deleta juiz com ID informado
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155348
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_12fd887f79ac4bdeb070bba2cc901249
+    parentId: fld_683b6965db1241e0b85d724d55b5f55b
+    modified: 1687268602985
+    created: 1687263331233
+    url: "{{ base_url }}/etapa/1"
+    name: Busca etapa por id
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155353
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_683b6965db1241e0b85d724d55b5f55b
+    parentId: wrk_e0d5e715fc54436c9601c4e1e8a82b94
+    modified: 1687263331186
+    created: 1687263331186
+    name: etapa
+    description: All endpoints related to plantation locations
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1667771155384.5
+    _type: request_group
+  - _id: req_af0f83c398da422ab37821af76fa45c9
+    parentId: fld_683b6965db1241e0b85d724d55b5f55b
+    modified: 1687263384786
+    created: 1687263331262
+    url: "{{ base_url }}/etapa"
+    name: Busca todos as etapas
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155351.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_32e924e96ee74e5a8083a1ad97a84518
+    parentId: fld_683b6965db1241e0b85d724d55b5f55b
+    modified: 1687287878723
+    created: 1687263331291
+    url: "{{ base_url }}/etapa"
+    name: Cadastra etapa
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Quartas"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155349
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d4abe8a42e574c0fb433635be898f2bb
+    parentId: fld_683b6965db1241e0b85d724d55b5f55b
+    modified: 1687268630224
+    created: 1687263331321
+    url: "{{ base_url }}/etapa/2"
+    name: Atualiza etapa
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "quartas"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155348.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_35a1ef18a83b44ada2448d090a6999cd
+    parentId: fld_683b6965db1241e0b85d724d55b5f55b
+    modified: 1687268644452
+    created: 1687263331201
+    url: "{{ base_url }}/etapa/2"
+    name: Deleta etapa com ID informado
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{token}}"
+    metaSortKey: -1667771155348
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_3a4ebeefc0aa48eeb041d4d27c387498
+    parentId: wrk_e0d5e715fc54436c9601c4e1e8a82b94
+    modified: 1687285842755
+    created: 1687142282315
+    name: Base environment
+    data:
+      base_url: http://localhost:8080
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODcyODU4MjgsImV4cCI6MTY4NzI4OTQyOH0.DYxi5f4vXaV-NBbyQDhO4tuR1qP3ulBkNzXcQuMbDTU
+    dataPropertyOrder:
+      "&":
+        - base_url
+        - token
+    color: null
+    isPrivate: false
+    metaSortKey: 1667771048676
+    _type: environment
+  - _id: jar_a8349ef4c9c04f26a40781e50747743a
+    parentId: wrk_e0d5e715fc54436c9601c4e1e8a82b94
+    modified: 1687142282372
+    created: 1687142282372
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_418afda47af74c3d854c2863e8d30c40
+    parentId: wrk_e0d5e715fc54436c9601c4e1e8a82b94
+    modified: 1687142283237
+    created: 1687142282399
+    fileName: API TorneioJudo
+    contents: >-
+      {
+        "openapi": "3.0.0",
+        "info": {
+          "title": "API PlanTree",
+          "description": "API",
+          "contact": {
+            "email": "andressa.r@aluno.ifsp.edu.br"
+          },
+          "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+          },
+          "version": "1.0.0"
+        },
+        "servers": [
+          {
+            "url": "https://virtserver.swaggerhub.com/ANDRESSAR/PlanTree/1.0.0",
+            "description": "API Docs for PlanTree application"
+          }
+        ],
+        "tags": [
+          {
+            "name": "trees",
+            "description": "All trees related endpoints"
+          },
+          {
+            "name": "trees_planted",
+            "description": "All endpoints related to planted trees"
+          },
+          {
+            "name": "plantation_locations",
+            "description": "All endpoints related to plantation locations"
+          },
+          {
+            "name": "users",
+            "description": "All endpoints related to users"
+          }
+        ],
+        "paths": {
+          "/trees": {
+            "get": {
+              "tags": [
+                "trees"
+              ],
+              "summary": "Busca todas as árvores",
+              "description": "Lista as árvores cadastradas",
+              "operationId": "searchtrees",
+              "responses": {
+                "200": {
+                  "description": "Retorna lista de árvores",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/Tree"
+                        }
+                      }
+                    }
+                  }
+                },
+                "400": {
+                  "description": "bad input parameter"
+                }
+              }
+            },
+            "post": {
+              "tags": [
+                "trees"
+              ],
+              "summary": "Cadastra árvore",
+              "operationId": "createTree",
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Tree"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "201": {
+                  "description": "Árvore cadastrada",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/Tree"
+                      }
+                    }
+                  }
+                },
+                "400": {
+                  "description": "invalid input object"
+                }
+              }
+            }
+          },
+          "/trees/{id}": {
+            "get": {
+              "tags": [
+                "trees"
+              ],
+              "summary": "Busca árvore pelo id informado",
+              "description": "Busca árvore pelo id informado",
+              "operationId": "searchonetree",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "ID",
+                  "required": true,
+                  "style": "simple",
+                  "explode": false,
+                  "schema": {
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int64"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Retorna dados da árvore",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/Tree"
+                      }
+                    }
+                  }
+                },
+                "400": {
+                  "description": "bad input parameter"
+                },
+                "404": {
+                  "description": "not found"
+                }
+              }
+            },
+            "put": {
+              "tags": [
+                "trees"
+              ],
+              "summary": "Atualiza árvore",
+              "operationId": "updateTree",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "ID",
+                  "required": true,
+                  "style": "simple",
+                  "explode": false,
+                  "schema": {
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int64"
+                  }
+                }
+              ],
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Tree"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "Árvore atualizada",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/Tree"
+                      }
+                    }
+                  }
+                },
+                "400": {
+                  "description": "invalid input object"
+                },
+                "404": {
+                  "description": "not found"
+                }
+              }
+            },
+            "delete": {
+              "tags": [
+                "trees"
+              ],
+              "summary": "Deleta árvore do ID informado",
+              "description": "Deleta dados de árvore",
+              "operationId": "deleteTree",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "style": "simple",
+                  "explode": false,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ],
+              "responses": {
+                "204": {
+                  "description": "Árvore deletada"
+                },
+                "404": {
+                  "description": "not found"
+                }
+              }
+            }
+          },
+          "/trees_planted": {
+            "get": {
+              "tags": [
+                "trees_planted"
+              ],
+              "summary": "Busca todas as árvores plantadas do usuário",
+              "description": "Lista as árvores plantadas do usuário logado",
+              "responses": {
+                "200": {
+                  "description": "Lista de árvores plantadas pelo usuário",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/TreePlanted"
+                        }
+                      }
+                    }
+                  }
+                },
+                "400": {
+                  "description": "bad input parameter"
+                }
+              }
+            },
+            "post": {
+              "tags": [
+                "trees_planted"
+              ],
+              "summary": "Cadastra árvore plantada",
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/TreePlanted"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "201": {
+                  "description": "Cadastro de árvore plantada realizado",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/TreePlanted"
+                      }
+                    }
+                  }
+                },
+                "400": {
+                  "description": "invalid input object"
+                }
+              }
+            }
+          },
+          "/trees_planted/{id}": {
+            "get": {
+              "tags": [
+                "trees_planted"
+              ],
+              "summary": "Busca dados da árvore plantada pelo id informado",
+              "description": "Busca dados da árvore plantada pelo id informado",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "ID",
+                  "required": true,
+                  "style": "simple",
+                  "explode": false,
+                  "schema": {
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int64"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Retorna dados da árvore plantada",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/TreePlanted"
+                      }
+                    }
+                  }
+                },
+                "400": {
+                  "description": "bad input parameter"
+                },
+                "404": {
+                  "description": "not found"
+                }
+              }
+            },
+            "put": {
+              "tags": [
+                "trees_planted"
+              ],
+              "summary": "Atualiza registro de árvore plantada",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "ID",
+                  "required": true,
+                  "style": "simple",
+                  "explode": false,
+                  "schema": {
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int64"
+                  }
+                }
+              ],
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/TreePlanted"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "Success",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/TreePlanted"
+                      }
+                    }
+                  }
+                },
+                "400": {
+                  "description": "invalid input object"
+                },
+                "404": {
+                  "description": "not found"
+                }
+              }
+            },
+            "delete": {
+              "tags": [
+                "trees_planted"
+              ],
+              "summary": "Deleta árvore plantada com ID informado",
+              "description": "Deleta dados de árvore plantada",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "style": "simple",
+                  "explode": false,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ],
+              "responses": {
+                "204": {
+                  "description": "Árvore plantada deletada"
+                },
+                "404": {
+                  "description": "not found"
+                }
+              }
+            }
+          },
+          "/plantation_locations": {
+            "get": {
+              "tags": [
+                "plantation_locations"
+              ],
+              "summary": "Busca locais de plantação do usuário logado",
+              "description": "Lista locais de plantação do usuário",
+              "responses": {
+                "200": {
+                  "description": "Retorna lista de locais de plantação do usuário",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/PlantationLocal"
+                        }
+                      }
+                    }
+                  }
+                },
+                "400": {
+                  "description": "bad input parameter"
+                }
+              }
+            },
+            "post": {
+              "tags": [
+                "plantation_locations"
+              ],
+              "summary": "Cadastra locais de plantação",
+              "requestBody": {
+                "description": "Local de plantação",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/PlantationLocal"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "201": {
+                  "description": "Cadastro de local de plantação realizado",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/PlantationLocal"
+                      }
+                    }
+                  }
+                },
+                "400": {
+                  "description": "invalid input object"
+                }
+              }
+            }
+          },
+          "/plantation_locations/{id}": {
+            "delete": {
+              "tags": [
+                "plantation_locations"
+              ],
+              "summary": "Deleta árvore local de plantação com ID informado",
+              "description": "Deleta dados de local de plantação",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "style": "simple",
+                  "explode": false,
+                  "schema": {
+                    "type": "integer"
+                  }
+                }
+              ],
+              "responses": {
+                "204": {
+                  "description": "Local de plantação deletado"
+                },
+                "404": {
+                  "description": "not found"
+                }
+              }
+            }
+          },
+          "/users": {
+            "get": {
+              "tags": [
+                "users"
+              ],
+              "summary": "Busca todos os usuários",
+              "description": "Retorna a listagem de todos os usuários registrados caso o usuário logado for administrador, caso não retorna dados do seu usuário\n",
+              "responses": {
+                "200": {
+                  "description": "Retorno lista de usuários",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/User"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "post": {
+              "tags": [
+                "users"
+              ],
+              "summary": "Cadadastra usuário ao sistema",
+              "description": "Cadastrar usuário",
+              "requestBody": {
+                "description": "Usuário",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "201": {
+                  "description": "Usuário cadastrado",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/User"
+                        }
+                      }
+                    }
+                  }
+                },
+                "400": {
+                  "description": "invalid input, object invalid"
+                }
+              }
+            }
+          },
+          "/users/{user_id}": {
+            "get": {
+              "tags": [
+                "users"
+              ],
+              "summary": "Busca o usuário do ID informado",
+              "description": "Busca usuário",
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User ID",
+                  "required": true,
+                  "style": "simple",
+                  "explode": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Retorna usuário",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/User"
+                        }
+                      }
+                    }
+                  }
+                },
+                "404": {
+                  "description": "Usuário não encontrado"
+                }
+              }
+            },
+            "put": {
+              "tags": [
+                "users"
+              ],
+              "summary": "Atualiza o usuário do ID informado",
+              "description": "Atualiza o usuário",
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User ID",
+                  "required": true,
+                  "style": "simple",
+                  "explode": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Usuário atualizado com sucesso",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/User"
+                      }
+                    }
+                  }
+                },
+                "400": {
+                  "description": "invalid input, object invalid"
+                },
+                "404": {
+                  "description": "Usuário não encontrado"
+                }
+              }
+            },
+            "delete": {
+              "tags": [
+                "users"
+              ],
+              "summary": "Remove o usuário do ID informado",
+              "description": "Deleta o usuário",
+              "parameters": [
+                {
+                  "name": "user_id",
+                  "in": "path",
+                  "description": "User ID",
+                  "required": true,
+                  "style": "simple",
+                  "explode": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "204": {
+                  "description": "Usuário excluído com sucesso",
+                  "content": {
+                    "application/text": {
+                      "example": "Usuário excluído com sucesso"
+                    }
+                  }
+                },
+                "404": {
+                  "description": "Usuário não encontrado"
+                }
+              }
+            }
+          }
+        },
+        "components": {
+          "schemas": {
+            "Tree": {
+              "required": [
+                "class",
+                "description",
+                "division",
+                "family",
+                "genus",
+                "group",
+                "id",
+                "name",
+                "origin",
+                "scientific_name",
+                "specie"
+              ],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number",
+                  "format": "uuid",
+                  "example": 1
+                },
+                "name": {
+                  "type": "string",
+                  "example": "Abacateiro"
+                },
+                "family": {
+                  "type": "string",
+                  "example": "Lauraceae"
+                },
+                "scientific_name": {
+                  "type": "string",
+                  "example": "Persea americana"
+                },
+                "origin": {
+                  "type": "string",
+                  "example": "americana"
+                },
+                "division": {
+                  "type": "string",
+                  "example": "Magnoliophyta"
+                },
+                "class": {
+                  "type": "string",
+                  "example": "Magnoliopsida"
+                },
+                "genus": {
+                  "type": "string",
+                  "example": "Persea"
+                },
+                "specie": {
+                  "type": "string",
+                  "example": "P. americana"
+                },
+                "group": {
+                  "type": "string",
+                  "example": "Angiospermas"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "O abacateiro cresce mais facilmente em solos leves, profundos, drenados e ligeiramente ácidos. As melhores condições climáticas são encontradas em regiões com chuvas em torno de 1200 milímetros anuais. São conhecidas mais de 500 variedades, de três origens diferentes: a guatemalteca, a antilhana e a mexicana. A parte comestível é a polpa verde-amarelada, de consistência mole, que envolve a grande semente."
+                }
+              }
+            },
+            "PlantationLocal": {
+              "required": [
+                "id",
+                "name",
+                "user_id"
+              ],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number",
+                  "format": "uuid",
+                  "example": 1
+                },
+                "name": {
+                  "type": "string",
+                  "example": "Pomar da minha casa"
+                },
+                "user_id": {
+                  "type": "number",
+                  "format": "uuid",
+                  "example": 1
+                }
+              }
+            },
+            "User": {
+              "required": [
+                "createdAt",
+                "email",
+                "id",
+                "isAdmin",
+                "name",
+                "password"
+              ],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number",
+                  "format": "uuid",
+                  "example": 1
+                },
+                "name": {
+                  "type": "string",
+                  "example": "Andressa"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "example@example.com"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "qweasd"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "example": "2022-09-07T01:12:25.001Z"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "example": "2022-09-07T01:12:25.001Z"
+                },
+                "isAdmin": {
+                  "type": "boolean",
+                  "example": true
+                }
+              }
+            },
+            "TreePlanted": {
+              "required": [
+                "date",
+                "id",
+                "local_id",
+                "name",
+                "tree_id",
+                "user_id"
+              ],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number",
+                  "format": "uuid",
+                  "example": 1
+                },
+                "name": {
+                  "type": "string",
+                  "example": "Abacateiro"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "Abacateiro"
+                },
+                "date": {
+                  "type": "string",
+                  "format": "date",
+                  "example": "2022-09-07"
+                },
+                "tree_id": {
+                  "type": "number",
+                  "format": "uuid",
+                  "example": 1
+                },
+                "local_id": {
+                  "type": "number",
+                  "format": "uuid",
+                  "example": 1
+                },
+                "user_id": {
+                  "type": "number",
+                  "format": "uuid",
+                  "example": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    contentType: yaml
+    _type: api_spec
+  - _id: env_d248411abb574fabb3bbc9a668cd79d7
+    parentId: env_3a4ebeefc0aa48eeb041d4d27c387498
+    modified: 1687142282325
+    created: 1687142282325
+    name: OpenAPI env
+    data:
+      scheme: https
+      base_path: /ANDRESSAR/PlanTree/1.0.0
+      host: virtserver.swaggerhub.com
+      id: "1"
+      base_url: localhost:3000
+      base_url_auth: localhost:4000
+      user_id: 63685f0faf70e1428096834c
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTEyZmJjZjBlOGZiNmU0ZGQ2Y2ZkMCIsImlhdCI6MTY3MDQ1OTQxMiwiZXhwIjoxNjcwNDYzMDEyfQ.hDRNJXvGjJqBiFJDMWObLMQCtZpjNlSJ_R7egnU9uG4
+    dataPropertyOrder:
+      "&":
+        - scheme
+        - base_path
+        - host
+        - id
+        - base_url
+        - base_url_auth
+        - user_id
+        - token
+    color: null
+    isPrivate: false
+    metaSortKey: 1667771155394
+    _type: environment
