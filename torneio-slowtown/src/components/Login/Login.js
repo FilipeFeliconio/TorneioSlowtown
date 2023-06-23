@@ -17,7 +17,7 @@ function Login() {
             Entrar
           </button>
         </form>
-        <Link className="dont-have-acc" to="signup">
+        <Link className="dont-have-acc" to="/signup">
           Não tem uma conta? Cadastre-se
         </Link>
       </div>
