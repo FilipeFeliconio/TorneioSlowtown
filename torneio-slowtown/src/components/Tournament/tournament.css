@@ -1,0 +1,42 @@
+.container-tournament {
+  background-color: #000;
+  padding: 20px;
+  text-align: center;
+  height: 100vh;
+}
+
+body {
+  background-color: #000;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+}
+
+.chave {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.chave input[type="text"] {
+  flex: 1;
+  padding: 5px;
+}
+
+.chave span {
+  margin: 0 10px;
+}
+
+.vencedor {
+  color: #fff;
+  margin-top: 20px;
+}
+
+span {
+    color: #fff;
+}
