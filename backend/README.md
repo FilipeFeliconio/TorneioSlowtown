@@ -13,6 +13,13 @@ Deploy
 -  Create a .env file in the root of your project backend based in .env.example, define NODE_ENV=production
 - `sequelize db:migrate --env production` to run migrations
 
+## Testes no Jest
+To run the tests, use the commands below. Make sure you provide a jwt token for the tests in the .env file and set the environment to test
+
+```bash
+  npx sequelize-cli db:migrate --env=test
+  npm run test
+
 # Estrutura de diretórios
 ```
 │   app.js           # Configurações Servidor, definições do Express
