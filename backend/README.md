@@ -22,16 +22,12 @@ Deploy
 |   .sequelizerc     # Definição de diretórios para o sequelize
 └───docs             # Arquivos de documentação, diagrama banco de dados e collection de testes da api              
 └───src                 
-   └───controllers   # Este diretório contém os controladores para lidar com as ações das rotas
-       └───app       # Contém os controladores relacionados às rotas da aplicação.
-       └───auth      # Contém os controladores relacionados às rotas de autenticação.
+   └───controllers   # Este diretório contém os controladores para lidar com as ações das rotas da api
    └───database      # Definição de configs de banco de dados e migrations
        └───config    
        └───migrations
    └───models        # Este diretório contém os modelos para as entidades da aplicação
        └───app       # Contém os modelos relacionados às entidades da aplicação
-       └───auth      # Contém os modelos relacionados às entidades de autenticação
-   └───services      # Serviços e operações específicas com os models
    └───middleware    # Componentes de autenticação
 ```
 

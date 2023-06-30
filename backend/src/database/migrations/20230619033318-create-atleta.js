@@ -9,6 +9,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      primeiro_nome: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      ultimo_nome: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       cpf: {
         type: Sequelize.STRING,
         allowNull: false
@@ -23,10 +31,6 @@ module.exports = {
       },
       categoria: {
         type: Sequelize.STRING,
-        allowNull: false
-      },
-      user_id: {
-        type: Sequelize.INTEGER,
         allowNull: false
       },
       createdAt: {

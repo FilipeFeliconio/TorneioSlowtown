@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate({Usuario, Luta}) {
       // define association here
-      this.belongsTo(Usuario, {foreignKey: 'user_id', as: 'user'});
 
       this.hasMany(Luta, {
         foreignKey: 'atleta_a',
@@ -28,11 +27,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Atleta.init({
+    primeiro_nome: DataTypes.STRING,
+    ultimo_nome: DataTypes.STRING,
     cpf: DataTypes.STRING,
     peso: DataTypes.DECIMAL,
     patrocinador: DataTypes.STRING,
-    categoria: DataTypes.STRING,
-    user_id: DataTypes.INTEGER
+    categoria: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Atleta',

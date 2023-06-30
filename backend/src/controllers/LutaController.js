@@ -1,8 +1,7 @@
-const models = require('../../models');
+const models = require('../models');
 const Atleta = models.Atleta;
 const Luta = models.Luta;
 const { Op } = require("sequelize");
-//const AtletaService = require("../../services/app/Service");
 
 module.exports = {
   async create(request, response) {
@@ -34,7 +33,6 @@ module.exports = {
       }
       response.status(400).json("Necessário informar todos atributos para cadastrar. Atributos: data, id_atleta_a, id_atleta_b, juiz_id, etapa_id");  
     } catch (error) {
-      console.log(error)
       response.status(400).send(error);
     }
   },
@@ -87,17 +85,13 @@ module.exports = {
     try {
       const lutas = await Luta.findAll({
         where: { '$etapa.nome$': { [Op.eq]: request.params.etapa }},
-        include: { 
-          model: Atleta, as: 'atleta_a',
-          model: Atleta, as: 'atleta_b',
-          model: Atleta, as: 'vencedor',
-          model: models.Juiz, as: 'juiz',
-          model: models.Etapa, as: 'etapa'
-        }
+        include: [
+          'participante_atleta_a', 'participante_atleta_b', 'atleta_vencedor', 'juiz', 'etapa'
+        ],
+        attributes: { exclude: ['atleta_a', 'atleta_b', 'juiz_id', 'etapa_id', 'vencedor'] }
       });
       response.status(200).json(lutas);
     } catch (error) {
-      console.log(error)
       response.status(400).send(error);
     }
   },
@@ -139,7 +133,6 @@ module.exports = {
       );
       response.status(200).json(luta_atualizado_completo);
     } catch (error) {
-      console.log(error)
       response.status(400).send(error);
     }
   },

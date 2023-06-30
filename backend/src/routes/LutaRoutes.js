@@ -1,6 +1,6 @@
 const {Router} = require("express");
-const LutaController = require("../../controllers/app/LutaController");
-const {verifyJWT} = require("../../middleware/auth/AuthenticationMiddleware");
+const LutaController = require("../controllers/LutaController");
+const {verifyJWT} = require("../middleware/auth/AuthenticationMiddleware");
 const routes = Router();
 
 routes.post("/luta", LutaController.create);
