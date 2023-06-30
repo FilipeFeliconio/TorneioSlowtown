@@ -1,5 +1,5 @@
-const UserService = require("../../services/app/UserService");
-const AuthService = require("../../services/auth/AuthenticationService");
+const UserService = require("../services/UserService");
+const utils = require("../utils/utils");
 
 module.exports = {
 	async doLogin(req, res) {
@@ -11,13 +11,13 @@ module.exports = {
 					throw new Error();
 				}
 
-				const authenticated = await AuthService.comparePwd(req.body.senha, userLogin.senha);
+				const authenticated = await utils.comparePwd(req.body.senha, userLogin.senha);
 			
 				if(!authenticated){
 					throw new Error();
 				}
 
-				const token = AuthService.signJwt(userLogin._id);
+				const token = utils.signJwt(userLogin._id);
 				res.set('Authorization', `Bearer ${token}`);
 				res.status(200).json({
 					user: userLogin,
@@ -27,7 +27,7 @@ module.exports = {
 				res.status(400).send("Objeto de requisição deve conter um atributo email e senha");
 			}
 		}catch{
-			res.status(400).send("Credenciais incorretas");
+			res.status(400).send("Credenciais incorretas.");
 		}
 	},
 

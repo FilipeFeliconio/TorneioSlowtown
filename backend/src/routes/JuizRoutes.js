@@ -1,6 +1,6 @@
 const {Router} = require("express");
-const JuizController = require("../../controllers/app/JuizController");
-const {verifyJWT} = require("../../middleware/auth/AuthenticationMiddleware");
+const JuizController = require("../controllers/JuizController");
+const {verifyJWT} = require("../middleware/auth/AuthenticationMiddleware");
 const routes = Router();
 
 routes.post("/juiz", verifyJWT, JuizController.create);

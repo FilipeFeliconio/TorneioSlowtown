@@ -18,7 +18,7 @@ module.exports ={
 
   signJwt(id){
     var token = jwt.sign({id}, process.env.SECRET, {
-      expiresIn: '2h' // token expira em 2 horas
+      expiresIn: '2h' // expira em 2 hora
     });
 
     return token;

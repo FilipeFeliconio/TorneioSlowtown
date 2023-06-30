@@ -1,6 +1,6 @@
 const {Router} = require("express");
-const AtletaController = require("../../controllers/app/AtletaController");
-const {verifyJWT} = require("../../middleware/auth/AuthenticationMiddleware");
+const AtletaController = require("../controllers/AtletaController");
+const {verifyJWT} = require("../middleware/auth/AuthenticationMiddleware");
 const routes = Router();
 
 routes.post("/atleta", AtletaController.create);

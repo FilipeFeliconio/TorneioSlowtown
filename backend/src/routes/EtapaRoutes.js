@@ -1,6 +1,6 @@
 const {Router} = require("express");
-const EtapaController = require("../../controllers/app/EtapaController");
-const {verifyJWT} = require("../../middleware/auth/AuthenticationMiddleware");
+const EtapaController = require("../controllers/EtapaController");
+const {verifyJWT} = require("../middleware/auth/AuthenticationMiddleware");
 const routes = Router();
 
 routes.post("/etapa", verifyJWT, EtapaController.create);
