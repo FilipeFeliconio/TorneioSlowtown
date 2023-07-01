@@ -1,7 +1,7 @@
-import "./tournament.css";
 import React, { useState } from "react";
+import "./tournament.css";
 
-export default function Tournament() {
+function ChavesDoCampeonato() {
   const [competidores, setCompetidores] = useState([
     "Competidor 1",
     "Competidor 2",
@@ -13,64 +13,87 @@ export default function Tournament() {
     "Competidor 8",
   ]);
 
-  const [vencedor, setVencedor] = useState(null);
+  const [vencedoresChave1, setVencedoresChave1] = useState([]);
+  const [vencedoresChave2, setVencedoresChave2] = useState([]);
+  const [vencedorFinal, setVencedorFinal] = useState(null);
 
-  const handleChange = (index, event) => {
+  const handleChange = (index, event, chave) => {
     const updatedCompetidores = [...competidores];
     updatedCompetidores[index] = event.target.value;
     setCompetidores(updatedCompetidores);
   };
 
-  const handleVencedor = () => {
-    const vencedor1 = competidores[0] > competidores[1] ? competidores[0] : competidores[1]
-    const vencedor2 = competidores[2] > competidores[3] ? competidores[2] : competidores[3]
-    const vencedor3 = competidores[4] > competidores[5] ? competidores[4] : competidores[5]
-    const vencedor4 = competidores[6] > competidores[7] ? competidores[6] : competidores[7]
-
-    const semi1 = vencedor1 > vencedor2 ? vencedor1 : vencedor2
-    const semi2 = vencedor3 > vencedor4 ? vencedor3 : vencedor4
-
-    const finalista1 = semi1 > semi2 ? semi1 : semi2;
-
-    const vencedorFinal = finalista1;
-    setVencedor(vencedorFinal);
+  const handleDeterminarVencedor = (chave) => {
+    if (chave === 1) {
+      const vencedoresChave1 = [
+        competidores[0] > competidores[1] ? competidores[0] : competidores[1],
+        competidores[2] > competidores[3] ? competidores[2] : competidores[3],
+        competidores[4] > competidores[5] ? competidores[4] : competidores[5],
+        competidores[6] > competidores[7] ? competidores[6] : competidores[7],
+      ];
+      setVencedoresChave1(vencedoresChave1);
+    } else if (chave === 2) {
+      const vencedoresChave2 = [
+        vencedoresChave1[0] > vencedoresChave1[1]
+          ? vencedoresChave1[0]
+          : vencedoresChave1[1],
+        vencedoresChave1[2] > vencedoresChave1[3]
+          ? vencedoresChave1[2]
+          : vencedoresChave1[3],
+      ];
+      setVencedoresChave2(vencedoresChave2);
+    } else if (chave === 3) {
+      const vencedorFinal =
+        vencedoresChave2[0] > vencedoresChave2[1]
+          ? vencedoresChave2[0]
+          : vencedoresChave2[1];
+      setVencedorFinal(vencedorFinal);
+    }
   };
 
-  const renderChaves = () => {
-    const chaves = [];
-
-    for (let i = 0; i < competidores.length; i += 2) {
-      const competidor1 = competidores[i];
-      const competidor2 = competidores[i + 1];
-
-      chaves.push(
-        <div className="chave" key={i}>
-          <input
-            type="text"
-            value={competidor1}
-            placeholder="Competidor 1"
-            onChange={(event) => handleChange(i, event)}
-          />
-          <span>vs</span>
-          <input
-            type="text"
-            value={competidor2}
-            placeholder="Competidor 2"
-            onChange={(event) => handleChange(i + 1, event)}
-          />
+  const renderChave = (competidoresChave, chave) => {
+    return (
+      <>
+        <div className="chave">
+          {competidoresChave.map((competidor, index) => (
+            <div key={index} className="competidor">
+              <input
+                type="text"
+                value={competidor || ""}
+                placeholder={`Competidor ${index + 1}`}
+                onChange={(event) => handleChange(index, event, chave)}
+              />
+            </div>
+          ))}
+          <button onClick={() => handleDeterminarVencedor(chave)}>
+            Determinar Vencedor
+          </button>
         </div>
-      );
-    }
-
-    return chaves;
+      </>
+    );
   };
 
   return (
-    <div className="container-tournament">
+    <div>
       <h1>Chaves do Campeonato</h1>
-      {renderChaves()}
-      <button onClick={handleVencedor}>Determinar Vencedor</button>
-      {vencedor && <div className="vencedor">O vencedor é o {vencedor}</div>}
+
+      <h2>Chave 1</h2>
+      {renderChave(competidores, 1)}
+
+      <h2>Chave 2</h2>
+      {vencedoresChave1.length === 4 && renderChave(vencedoresChave1, 2)}
+
+      <h2>Chave 3</h2>
+      {vencedoresChave2.length === 2 && renderChave(vencedoresChave2, 3)}
+
+      {vencedorFinal && (
+        <div className="vencedor-final">
+          <h2>Vencedor Final</h2>
+          <div>{vencedorFinal}</div>
+        </div>
+      )}
     </div>
   );
 }
+
+export default ChavesDoCampeonato;
