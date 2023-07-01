@@ -1,73 +1,17 @@
-import React from "react";
+import { React, useState } from "react";
 import "./listing.css";
+import listCompetitors from "../../services/competitors";
 
 function CompetidoresPage() {
-  const competidores = [
-    {
-      nome: "Miguel Lima",
-      cpf: "123.456.789-01",
-      email: "miguellima@gmail.com",
-      peso: "75kg",
-      categoria: "Pena",
-      patrocinador: "Monster",
-    },
-    {
-      nome: "Claudio Souza",
-      cpf: "234.567.890-12",
-      email: "claudiosouza@gmail.com",
-      peso: "80kg",
-      categoria: "Pena",
-      patrocinador: "RedBull",
-    },
-    {
-      nome: "Andre Marques",
-      cpf: "234.567.890-12",
-      email: "andremarques@gmail.com",
-      peso: "90kg",
-      categoria: "Medio",
-      patrocinador: "Camil",
-    },
-    {
-      nome: "Anderson Rogerio",
-      cpf: "234.567.890-12",
-      email: "andersonrogerio@gmail.com",
-      peso: "95kg",
-      categoria: "Medio",
-      patrocinador: "Spotify",
-    },
-    {
-      nome: "Tyler Joseph",
-      cpf: "234.567.890-12",
-      email: "tylerjoseph@gmail.com",
-      peso: "75kg",
-      categoria: "Pena",
-      patrocinador: "Trench",
-    },
-    {
-      nome: "Josh Dun",
-      cpf: "234.567.890-12",
-      email: "joshdun@gmail.com",
-      peso: "75kg",
-      categoria: "Pena",
-      patrocinador: "Dema",
-    },
-    {
-      nome: "Daniel Santiago",
-      cpf: "234.567.890-12",
-      email: "danielsantiago@gmail.com",
-      peso: "77kg",
-      categoria: "Pena",
-      patrocinador: "TAM",
-    },
-    {
-      nome: "Carlos Icaro",
-      cpf: "234.567.890-12",
-      email: "carlosicaro@gmail.com",
-      peso: "74kg",
-      categoria: "Pena",
-      patrocinador: "Ford",
-    },
-  ];
+  const competidoresRaw = listCompetitors();
+  const promise1 = Promise.resolve(competidoresRaw);
+  const [competidores, setCompetidores] = useState();
+
+  promise1.then((value) => {
+    setCompetidores(value);
+  });
+
+  console.log("competidores", competidores.data);
 
   const juizes = ["Juiz 1", "Juiz 2"];
 

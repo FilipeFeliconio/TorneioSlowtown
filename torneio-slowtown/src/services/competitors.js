@@ -1,8 +1,11 @@
-import { api } from './axios';
+import { apiBackWithToken } from './axios';
 
 async function listCompetitors() {
   try {
-    const response = await api.get('/atleta');
+    const response = await apiBackWithToken.get('/atleta')
+    .then(function (response) {
+      return response.data
+    })
     return response;
   } catch (error) {
     console.error('Error while listing competitors:', error);
