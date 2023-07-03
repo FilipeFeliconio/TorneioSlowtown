@@ -1,30 +1,40 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import "./listing.css";
 import listCompetitors from "../../services/competitors";
+import listReferees from "../../services/referees";
 
 function CompetidoresPage() {
+  const refereesRaw = listReferees();
+  const promise2 = Promise.resolve(refereesRaw);
+  const [referee, setReferee] = useState([]);
+
+
   const competidoresRaw = listCompetitors();
   const promise1 = Promise.resolve(competidoresRaw);
-  const [competidores, setCompetidores] = useState();
+  const [competidores, setCompetidores] = useState([]);
 
-  promise1.then((value) => {
-    setCompetidores(value);
-  });
+  useEffect(() => {
+    promise1.then((value) => {
+      setCompetidores(value.data);
+    });
 
-  console.log("competidores", competidores.data);
+    promise2.then((value2) => {
+      setReferee(value2.data);
+    });
+    // eslint-disable-next-line
+  }, []);
 
-  const juizes = ["Juiz 1", "Juiz 2"];
+  console.log("competidores", competidores);
+  console.log("referee", referee);
 
   return (
     <div>
       <h1>Competidores</h1>
-
       <table>
         <thead>
           <tr>
             <th>Nome</th>
             <th>CPF</th>
-            <th>E-mail</th>
             <th>Peso</th>
             <th>Categoria</th>
             <th>Patrocinador</th>
@@ -33,9 +43,8 @@ function CompetidoresPage() {
         <tbody>
           {competidores.map((competidor, index) => (
             <tr key={index}>
-              <td>{competidor.nome}</td>
+              <td>{competidor.primeiro_nome}</td>
               <td>{competidor.cpf}</td>
-              <td>{competidor.email}</td>
               <td>{competidor.peso}</td>
               <td>{competidor.categoria}</td>
               <td>{competidor.patrocinador}</td>
@@ -46,8 +55,8 @@ function CompetidoresPage() {
 
       <h2>Juízes</h2>
       <ul>
-        {juizes.map((juiz, index) => (
-          <li key={index}>{juiz}</li>
+        {referee.map((juiz, index) => (
+          <li key={index}>{juiz.nome}</li>
         ))}
       </ul>
     </div>

@@ -13,7 +13,8 @@ body {
   height: 100vh;
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
   color: #fff;
 }
@@ -38,4 +39,24 @@ h1, h2 {
 
 span {
   color: #fff;
+}
+
+.winner {
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+}
+
+.vencedor-final {
+  margin-bottom: 8rem;
+}
+
+.campeonato-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-competidor {
+  width: 99.5% !important;
 }

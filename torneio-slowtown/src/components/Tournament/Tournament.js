@@ -58,6 +58,7 @@ function ChavesDoCampeonato() {
           {competidoresChave.map((competidor, index) => (
             <div key={index} className="competidor">
               <input
+                className="input-competidor"
                 type="text"
                 value={competidor || ""}
                 placeholder={`Competidor ${index + 1}`}
@@ -74,7 +75,7 @@ function ChavesDoCampeonato() {
   };
 
   return (
-    <div>
+    <div className="campeonato-container">
       <h1>Chaves do Campeonato</h1>
 
       <h2>Chave 1</h2>
@@ -89,7 +90,7 @@ function ChavesDoCampeonato() {
       {vencedorFinal && (
         <div className="vencedor-final">
           <h2>Vencedor Final</h2>
-          <div>{vencedorFinal}</div>
+          <div className="winner">{vencedorFinal}</div>
         </div>
       )}
     </div>

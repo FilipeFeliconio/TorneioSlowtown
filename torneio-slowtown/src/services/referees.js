@@ -1,9 +1,9 @@
 import { apiBackWithToken } from "./axios";
 
-async function listCompetitors() {
+async function listReferees() {
   try {
     const response = await apiBackWithToken
-      .get("/atleta")
+      .get("/juiz")
       .then(function (response) {
         return response;
       });
@@ -14,4 +14,4 @@ async function listCompetitors() {
   }
 }
 
-export default listCompetitors;
+export default listReferees;

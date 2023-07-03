@@ -9,7 +9,7 @@ import SignupReferee from './components/SignupReferee/SignUpReferee'
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="signup-admin" element={<SignupAdmin />} />
