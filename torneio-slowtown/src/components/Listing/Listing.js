@@ -1,86 +1,40 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
 import "./listing.css";
+import listCompetitors from "../../services/competitors";
+import listReferees from "../../services/referees";
 
 function CompetidoresPage() {
-  const competidores = [
-    {
-      nome: "Miguel Lima",
-      cpf: "123.456.789-01",
-      email: "miguellima@gmail.com",
-      peso: "75kg",
-      categoria: "Pena",
-      patrocinador: "Monster",
-    },
-    {
-      nome: "Claudio Souza",
-      cpf: "234.567.890-12",
-      email: "claudiosouza@gmail.com",
-      peso: "80kg",
-      categoria: "Pena",
-      patrocinador: "RedBull",
-    },
-    {
-      nome: "Andre Marques",
-      cpf: "234.567.890-12",
-      email: "andremarques@gmail.com",
-      peso: "90kg",
-      categoria: "Medio",
-      patrocinador: "Camil",
-    },
-    {
-      nome: "Anderson Rogerio",
-      cpf: "234.567.890-12",
-      email: "andersonrogerio@gmail.com",
-      peso: "95kg",
-      categoria: "Medio",
-      patrocinador: "Spotify",
-    },
-    {
-      nome: "Tyler Joseph",
-      cpf: "234.567.890-12",
-      email: "tylerjoseph@gmail.com",
-      peso: "75kg",
-      categoria: "Pena",
-      patrocinador: "Trench",
-    },
-    {
-      nome: "Josh Dun",
-      cpf: "234.567.890-12",
-      email: "joshdun@gmail.com",
-      peso: "75kg",
-      categoria: "Pena",
-      patrocinador: "Dema",
-    },
-    {
-      nome: "Daniel Santiago",
-      cpf: "234.567.890-12",
-      email: "danielsantiago@gmail.com",
-      peso: "77kg",
-      categoria: "Pena",
-      patrocinador: "TAM",
-    },
-    {
-      nome: "Carlos Icaro",
-      cpf: "234.567.890-12",
-      email: "carlosicaro@gmail.com",
-      peso: "74kg",
-      categoria: "Pena",
-      patrocinador: "Ford",
-    },
-  ];
+  const refereesRaw = listReferees();
+  const promise2 = Promise.resolve(refereesRaw);
+  const [referee, setReferee] = useState([]);
 
-  const juizes = ["Juiz 1", "Juiz 2"];
+
+  const competidoresRaw = listCompetitors();
+  const promise1 = Promise.resolve(competidoresRaw);
+  const [competidores, setCompetidores] = useState([]);
+
+  useEffect(() => {
+    promise1.then((value) => {
+      setCompetidores(value.data);
+    });
+
+    promise2.then((value2) => {
+      setReferee(value2.data);
+    });
+    // eslint-disable-next-line
+  }, []);
+
+  console.log("competidores", competidores);
+  console.log("referee", referee);
 
   return (
     <div>
       <h1>Competidores</h1>
-
       <table>
         <thead>
           <tr>
             <th>Nome</th>
             <th>CPF</th>
-            <th>E-mail</th>
             <th>Peso</th>
             <th>Categoria</th>
             <th>Patrocinador</th>
@@ -89,9 +43,8 @@ function CompetidoresPage() {
         <tbody>
           {competidores.map((competidor, index) => (
             <tr key={index}>
-              <td>{competidor.nome}</td>
+              <td>{competidor.primeiro_nome}</td>
               <td>{competidor.cpf}</td>
-              <td>{competidor.email}</td>
               <td>{competidor.peso}</td>
               <td>{competidor.categoria}</td>
               <td>{competidor.patrocinador}</td>
@@ -102,8 +55,8 @@ function CompetidoresPage() {
 
       <h2>Juízes</h2>
       <ul>
-        {juizes.map((juiz, index) => (
-          <li key={index}>{juiz}</li>
+        {referee.map((juiz, index) => (
+          <li key={index}>{juiz.nome}</li>
         ))}
       </ul>
     </div>
